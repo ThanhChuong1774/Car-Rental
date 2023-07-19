@@ -1,10 +1,13 @@
-const express = require('express');
+import express from 'express';
+import configViewEngine from './configs/viewEngine';
 
 const app = express();
 const port = 3030;
 
+configViewEngine(app);
+
 app.get('/', (req, res) => {
-    res.send('Home');
+    res.render('user-home.ejs');
 })
 
 app.listen(port, () => {
