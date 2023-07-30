@@ -1,13 +1,13 @@
 import pool from '../configs/connectDB';
 
-let getHomePage = async (req, res) => {
+let getUserManagementPage = async (req, res) => {
 
     const [rows, fields] = await pool.execute('SELECT * FROM `users`');
     console.log('>>> check: ', rows);
 
-    return res.render('user-home', { dataUser: rows[0] });
+    return res.render('admin/user-management', { dataUser: rows });
 }
 
 module.exports = {
-    getHomePage
+    getUserManagementPage
 }
