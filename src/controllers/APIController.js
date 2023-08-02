@@ -1,4 +1,4 @@
-import pool from '../configs/connectDB';
+import pool from '../connection_database';
 import multer from 'multer';
 
 let getHomePage = async (req, res) => {
@@ -16,11 +16,41 @@ let getAllUsers = async (req, res) => {
 
 let getAllCars = async (req, res) => {
     const [rows, fields] = await pool.execute('SELECT * FROM `cars`');
-    console.log('>>> check: ', rows.length)
-    // for(let i = 0; i < rows.length)
+    console.log('>>> check: ', rows)
+    let cars = [];
+    for (let i = 0; i < rows.length; i++) {
+
+        // let { car_id, fuel_id, manufacture_year_id, price_id, seat_id, color_id, gear_type_id, brand_id, model_id, category_id, class_id, img, is_available } = rows[i];
+        let fuel = await pool.execute('SELECT fuel_name FROM `fuels` WHERE fuel_id = ?', [rows[i].fuel_id]);
+        fuel = fuel[0][0].fuel_name;
+        let manufacture_year = await pool.execute('SELECT manufacture_year FROM `manufacture_years` WHERE manufacture_year_id = ?', [rows[i].manufacture_year_id]);
+        manufacture_year = manufacture_year[0][0].manufacture_year;
+        let price = await pool.execute('SELECT price FROM `prices` WHERE price_id = ?', [rows[i].price_id]);
+        price = price[0][0].price;
+        let seat = await pool.execute('SELECT seat_amount FROM `seats` WHERE seat_id = ?', [rows[i].seat_id]);
+        seat = seat[0][0].seat_amount;
+        let color = await pool.execute('SELECT color_name FROM `colors` WHERE color_id = ?', [rows[i].color_id]);
+        color = color[0][0].color_name;
+        let gear_type = await pool.execute('SELECT gear_type FROM `gears` WHERE gear_id = ?', [rows[i].gear_type_id]);
+        gear_type = gear_type[0][0].gear_type;
+        let brand = await pool.execute('SELECT brand_name FROM `brands` WHERE brand_id = ?', [rows[i].brand_id]);
+        brand = brand[0][0].brand_name;
+        let model = await pool.execute('SELECT model_name FROM `models` WHERE model_id = ?', [rows[i].model_id]);
+        model = model[0][0].model_name;
+        let category = await pool.execute('SELECT category_name FROM `categories` WHERE category_id = ?', [rows[i].category_id]);
+        category = category[0][0].category_name;
+        let class_name = await pool.execute('SELECT class_name FROM `classes` WHERE class_id = ?', [rows[i].class_id]);
+        class_name = class_name[0][0].class_name;
+        let is_available = rows[i].is_available;
+        let img = rows[i].img;
+        let car_id = rows[i].car_id;
+        let car_info = { car_id, fuel, manufacture_year, price, seat, color, gear_type, brand, model, category, class_name, img, is_available };
+        cars.push(car_info);
+    }
+    // console.log('>>> check: ', cars)
     return res.status(200).json({
         message: 'ok',
-        data: rows
+        data: cars
     });
 }
 
@@ -171,11 +201,11 @@ let getAllVehicleConditions = async (req, res) => {
 
 let createNewCar = async (req, res) => {
     try {
-        let { location, brand, classe, category, color, model, manufacture_year, fuel, gear, seat, price, img_link } = req.body;
+        let { brand, classe, category, color, model, manufacture_year, fuel, gear, seat, price, img_link } = req.body;
         let is_available = 1;
 
         // Kiểm tra các thông số bị thiếu
-        if (!location || !brand || !classe || !category || !color || !model || !manufacture_year || !fuel || !gear || !seat || !price || !img_link) {
+        if (!brand || !classe || !category || !color || !model || !manufacture_year || !fuel || !gear || !seat || !price || !img_link) {
             return res.status(400).json({
                 message: 'missing required params',
             });
@@ -200,6 +230,19 @@ let createNewCar = async (req, res) => {
     }
 };
 
+let deleteCar = async (req, res) => {
+    let car_id = req.body.car_id;
+    if (!car_id) {
+        return res.status(200).json({
+            message: 'missing require params'
+        });
+    }
+    await pool.execute('delete from cars where car_id = ?', [car_id]);
+    return res.status(200).json({
+        message: 'ok'
+    });
+}
+
 module.exports = {
     getHomePage,
     getAllUsers, getAllCars,
@@ -207,5 +250,6 @@ module.exports = {
     getAllLocations, getAllStatuses, getAllEquipments, getAllVehicleConditions,
     getCarInfo,
 
-    createNewCar
+    createNewCar,
+    deleteCar
 }

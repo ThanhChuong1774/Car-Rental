@@ -1,9 +1,9 @@
 import express from 'express';
 import session from 'express-session';
-import configViewEngine from './configs/viewEngine';
-import initWebRoute from './routers/web';
-import initAPIRoute from './routers/api';
+import initAPIRoute from './routers/index';
 require('dotenv').config();
+
+require('./connection_database');
 
 const app = express();
 const port = process.env.PORT || 3031;
@@ -16,12 +16,6 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
 }))
-
-// Set up view engine
-configViewEngine(app);
-
-// Init web route
-initWebRoute(app);
 
 // Init API route
 initAPIRoute(app);
