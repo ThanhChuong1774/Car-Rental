@@ -28,10 +28,6 @@ export const register = ({ email, password, full_name, address, CCCD, phone, rol
             'access_token': token ? `Bearer ${token}` : token
         })
 
-        resolve({
-            err: 0,
-            mes: 'register service'
-        })
     } catch (error) {
         console.log(error)
         reject(error);
@@ -54,10 +50,6 @@ export const login = ({ email, password }) => new Promise(async (resolve, reject
             'access_token': token ? `Bearer ${token}` : token
         })
 
-        resolve({
-            err: 0,
-            mes: 'register service'
-        })
     } catch (error) {
         reject(error);
     }

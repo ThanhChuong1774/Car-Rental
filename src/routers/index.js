@@ -1,6 +1,8 @@
 import express from 'express';
 import userRouter from './userRouter';
 import authRouter from './authRouter';
+import insertRouter from './insertRouter';
+import brandRouter from './brandRouter';
 import { notFound } from '../middlewares/handle_error';
 import APIController from '../controllers/APIController'
 
@@ -34,6 +36,8 @@ const initAPIRoute = (app) => {
 
     app.use('/api/v1/user', userRouter);
     app.use('/api/v1/auth', authRouter);
+    app.use('/api/v1/insert', insertRouter);
+    app.use('/api/v1/brands', brandRouter);
 
     // router.get('/', APIController.getHomePage);
     // router.get('/get-all-users', APIController.getAllUsers);
