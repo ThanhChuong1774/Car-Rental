@@ -1,6 +1,7 @@
 import express from 'express';
 import userRouter from './userRouter';
 import authRouter from './authRouter';
+import { notFound } from '../middlewares/handle_error';
 import APIController from '../controllers/APIController'
 
 import multer from 'multer';
@@ -59,9 +60,7 @@ const initAPIRoute = (app) => {
     // router.post('/delete-car', APIController.deleteCar);
 
     // return app.use('/api/v1/', router);
-    return app.use('/', (req, res) => {
-        return res.send('Sever on')
-    })
+    app.use(notFound);
 }
 
 export default initAPIRoute;

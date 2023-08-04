@@ -8,7 +8,6 @@ const hashPassword = password => bcrypt.hashSync(password, bcrypt.genSaltSync(8)
 
 export const register = ({ email, password, full_name, address, CCCD, phone, role_code }) => new Promise(async (resolve, reject) => {
     try {
-        console.log({ email, password })
         const response = await db.users.findOrCreate({
             where: { email },
             defaults: {
@@ -41,7 +40,6 @@ export const register = ({ email, password, full_name, address, CCCD, phone, rol
 
 export const login = ({ email, password }) => new Promise(async (resolve, reject) => {
     try {
-        console.log({ email, password })
         const response = await db.users.findOne({
             where: { email },
             raw: true
@@ -61,7 +59,6 @@ export const login = ({ email, password }) => new Promise(async (resolve, reject
             mes: 'register service'
         })
     } catch (error) {
-        console.log(error)
         reject(error);
     }
 })

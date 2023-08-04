@@ -1,8 +1,17 @@
 import express from "express";
-import userController from '../controllers/userController';
+import * as controllers from '../controllers';
+import verifyToken from "../middlewares/verify_token";
+import { isAdmin, isStaffOrAdmin } from "../middlewares/verify_roles";
 
 let router = express.Router();
 
-router.get('/', userController.getUsers);
+// PUBLIC ROUTE
+
+
+// PRIVATE ROUTE
+// router.get('/', [verifyToken, isAdmin], controllers.getCurrent);
+router.use(verifyToken);
+// router.use(isAdmin);
+router.get('/', controllers.getCurrent);
 
 module.exports = router;

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      users.belongsTo(models.roles, { foreignKey: 'role_code', targetKey: 'code', as: 'roleData' });
     }
   }
   users.init({
