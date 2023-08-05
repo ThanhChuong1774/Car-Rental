@@ -6,11 +6,11 @@ import { isAdmin, isStaffOrAdmin } from "../middlewares/verify_roles";
 let router = express.Router();
 
 // PUBLIC ROUTE
-router.get('/get-brands', controllers.getBrands);
+router.get('/get-statuses', controllers.getStatuses);
 
 // PRIVATE ROUTE
 router.use(verifyToken);
 router.use(isAdmin);
-router.post('/create-new-brand', controllers.createNewBrand);
+router.post('/create-new-status', controllers.createNewStatus);
 
 module.exports = router;

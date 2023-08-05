@@ -3,6 +3,19 @@ import userRouter from './userRouter';
 import authRouter from './authRouter';
 import insertRouter from './insertRouter';
 import brandRouter from './brandRouter';
+import categoryRouter from './categoryRouter';
+import classRouter from './classRouter';
+import colorRouter from './colorRouter';
+import equipmentRouter from './equipmentRouter';
+import fuelRouter from './fuelRouter';
+import gearRouter from './gearRouter';
+import manufacture_yearRouter from './manufacture_yearRouter';
+import modelRouter from './modelRouter';
+import priceRouter from './priceRouter';
+import seatRouter from './seatRouter';
+import statusRouter from './statusRouter';
+import vehicleConditionRouter from './vehicle_conditionRouter';
+import carRouter from './carRouter';
 import { notFound } from '../middlewares/handle_error';
 import APIController from '../controllers/APIController'
 
@@ -38,6 +51,19 @@ const initAPIRoute = (app) => {
     app.use('/api/v1/auth', authRouter);
     app.use('/api/v1/insert', insertRouter);
     app.use('/api/v1/brands', brandRouter);
+    app.use('/api/v1/categories', categoryRouter);
+    app.use('/api/v1/classes', classRouter);
+    app.use('/api/v1/colors', colorRouter);
+    app.use('/api/v1/equipments', equipmentRouter);
+    app.use('/api/v1/fuels', fuelRouter);
+    app.use('/api/v1/gears', gearRouter);
+    app.use('/api/v1/manufacture_years', manufacture_yearRouter);
+    app.use('/api/v1/models', modelRouter);
+    app.use('/api/v1/prices', priceRouter);
+    app.use('/api/v1/seats', seatRouter);
+    app.use('/api/v1/statuses', statusRouter);
+    app.use('/api/v1/vehicle_conditions', vehicleConditionRouter);
+    app.use('/api/v1/cars', carRouter);
 
     // router.get('/', APIController.getHomePage);
     // router.get('/get-all-users', APIController.getAllUsers);

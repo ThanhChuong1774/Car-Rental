@@ -1,23 +1,24 @@
 import * as services from '../services'
-import { brand_name } from '../helpers/joi_schema'
+import { equipment_name } from '../helpers/joi_schema'
 import joi from 'joi';
 import { internalServerError, badRequest } from '../middlewares/handle_error';
 
-export const getBrands = async (req, res) => {
+export const getEquipments = async (req, res) => {
     try {
-        const response = await services.getBrands(req.query);
+        console.log(req.query);
+        const response = await services.getEquipments(req.query);
         return res.status(200).json(response);
     } catch (error) {
         return internalServerError(res);
     }
 }
 
-export const createNewBrand = async (req, res) => {
+export const createNewEquipment = async (req, res) => {
     try {
 
-        const { error } = joi.object({ brand_name }).validate(req.body);
+        const { error } = joi.object({ equipment_name }).validate(req.body);
         if (error) { return badRequest(error.details[0].message, res) }
-        const response = await services.createNewBrand(req.body);
+        const response = await services.createNewEquipment(req.body);
         return res.status(200).json(response);
     } catch (error) {
         return internalServerError(res);

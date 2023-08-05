@@ -10,6 +10,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             class_name: { type: Sequelize.STRING },
+            class_describe: { type: Sequelize.STRING },
             createdAt: { allowNull: false, type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
             updatedAt: { allowNull: false, type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
         });

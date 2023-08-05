@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('models', {
+        await queryInterface.createTable('modelsses', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
@@ -10,11 +10,12 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             model_name: { type: Sequelize.STRING },
+            brand_id: { type: Sequelize.INTEGER },
             createdAt: { allowNull: false, type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
             updatedAt: { allowNull: false, type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
         });
     },
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('models');
+        await queryInterface.dropTable('modelsses');
     }
 };

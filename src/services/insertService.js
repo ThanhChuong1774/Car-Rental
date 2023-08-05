@@ -6,6 +6,42 @@ export const insertData = () => new Promise(async (resolve, reject) => {
         for (const brandData of data.brand) {
             await db.brands.create({ brand_name: brandData.brand_name });
         }
+        for (const categoryData of data.categories) {
+            await db.categories.create({ category_name: categoryData.category_name });
+        }
+        for (const classData of data.classes) {
+            await db.classes.create({ class_name: classData.class_name, class_describe: classData.class_describe });
+        }
+        for (const colorData of data.colors) {
+            await db.colors.create({ color_name: colorData.color_name });
+        }
+        for (const equipmentData of data.equipments) {
+            await db.equipments.create({ equipment_name: equipmentData.equipment_name });
+        }
+        for (const fuelData of data.fuels) {
+            await db.fuels.create({ fuel_name: fuelData.fuel_name });
+        }
+        for (const gearData of data.gears) {
+            await db.gears.create({ gear_type: gearData.gear_type });
+        }
+        for (const manufacture_yearData of data.manufacture_years) {
+            await db.manufacture_years.create({ manufacture_year: manufacture_yearData.manufacture_year });
+        }
+        for (const modelData of data.modelsses) {
+            await db.modelsses.create({ model_name: modelData.model_name, brand_id: modelData.brand_id });
+        }
+        for (const priceData of data.prices) {
+            await db.prices.create({ price: priceData.price });
+        }
+        for (const seatData of data.seats) {
+            await db.seats.create({ seat_amount: seatData.seat_amount });
+        }
+        for (const statusData of data.statuses) {
+            await db.statuses.create({ status: statusData.status });
+        }
+        for (const vehicle_conditionData of data.vehicle_conditions) {
+            await db.vehicle_conditions.create({ vehicle_condition: vehicle_conditionData.vehicle_condition });
+        }
         resolve('OK')
     } catch (error) {
         console.log(error)

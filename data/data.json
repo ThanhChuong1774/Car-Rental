@@ -30,5 +30,502 @@
         {
             "brand_name": "Kia"
         }
+    ],
+    "categories": [
+        {
+            "category_name": "Sedan"
+        },
+        {
+            "category_name": "SUV"
+        },
+        {
+            "category_name": "Hatchback"
+        },
+        {
+            "category_name": "Convertible"
+        },
+        {
+            "category_name": "Coupe"
+        },
+        {
+            "category_name": "MPV"
+        },
+        {
+            "category_name": "Truck"
+        },
+        {
+            "category_name": "Crossover"
+        },
+        {
+            "category_name": "Minivan"
+        },
+        {
+            "category_name": "Sports Car"
+        }
+    ],
+    "classes": [
+        {
+            "class_name": "A",
+            "class_describe": "Xe cỡ nhỏ (city car)"
+        },
+        {
+            "class_name": "B",
+            "class_describe": "Xe bình dân cỡ nhỏ (subcompact car)"
+        },
+        {
+            "class_name": "C",
+            "class_describe": "Xe bình dân cỡ vừa (compact car)"
+        },
+        {
+            "class_name": "D",
+            "class_describe": "Xe bình dân cỡ lớn"
+        },
+        {
+            "class_name": "E",
+            "class_describe": "Xe hạng sang"
+        },
+        {
+            "class_name": "F",
+            "class_describe": "Xe hạng sang cỡ lớn"
+        },
+        {
+            "class_name": "M",
+            "class_describe": "Xe MPV hay minivan"
+        }
+    ],
+    "colors": [
+        {
+            "color_name": "Black"
+        },
+        {
+            "color_name": "White"
+        },
+        {
+            "color_name": "Silver"
+        },
+        {
+            "color_name": "Red"
+        },
+        {
+            "color_name": "Blue"
+        }
+    ],
+    "delivery_euipment_details": [],
+    "delivery_receipts": [],
+    "delivery_vehicle_condition_details": [],
+    "equipments": [
+        {
+            "equipment_name": "Bộ dụng cụ thay lốp: con đội, tay quay, tuýp mở ốc bánh xe"
+        },
+        {
+            "equipment_name": "Móc kéo xe"
+        },
+        {
+            "equipment_name": "Bộ dụng cụ sửa chữa nhỏ"
+        },
+        {
+            "equipment_name": "Bộ thảm sàn"
+        },
+        {
+            "equipment_name": "Chụp trục bánh xe"
+        },
+        {
+            "equipment_name": "Bánh xe dự phòng"
+        },
+        {
+            "equipment_name": "Gạt tàn thuốc"
+        },
+        {
+            "equipment_name": "Chụp nhựa chân ghế cuối"
+        }
+    ],
+    "fuels": [
+        {
+            "fuel_name": "Xăng"
+        },
+        {
+            "fuel_name": "Dầu"
+        },
+        {
+            "fuel_name": "Điện"
+        },
+        {
+            "fuel_name": "Hybrid"
+        }
+    ],
+    "gears": [
+        {
+            "gear_type": "Hộp số sàn"
+        },
+        {
+            "gear_type": "Hộp số tự động"
+        },
+        {
+            "gear_type": "Hộp số tự động vô cấp CVT"
+        },
+        {
+            "gear_type": "Hộp số ly hợp kép DCT"
+        }
+    ],
+    "invoices": [],
+    "manufacture_years": [
+        {
+            "manufacture_year": "2000"
+        },
+        {
+            "manufacture_year": "2001"
+        },
+        {
+            "manufacture_year": "2002"
+        },
+        {
+            "manufacture_year": "2003"
+        },
+        {
+            "manufacture_year": "2004"
+        },
+        {
+            "manufacture_year": "2005"
+        },
+        {
+            "manufacture_year": "2006"
+        },
+        {
+            "manufacture_year": "2007"
+        },
+        {
+            "manufacture_year": "2008"
+        },
+        {
+            "manufacture_year": "2009"
+        },
+        {
+            "manufacture_year": "2010"
+        },
+        {
+            "manufacture_year": "2011"
+        },
+        {
+            "manufacture_year": "2012"
+        },
+        {
+            "manufacture_year": "2013"
+        },
+        {
+            "manufacture_year": "2014"
+        },
+        {
+            "manufacture_year": "2015"
+        },
+        {
+            "manufacture_year": "2016"
+        },
+        {
+            "manufacture_year": "2017"
+        },
+        {
+            "manufacture_year": "2018"
+        },
+        {
+            "manufacture_year": "2019"
+        },
+        {
+            "manufacture_year": "2020"
+        },
+        {
+            "manufacture_year": "2021"
+        },
+        {
+            "manufacture_year": "2022"
+        },
+        {
+            "manufacture_year": "2023"
+        }
+    ],
+    "modelsses": [
+        {
+            "model_name": "Corolla",
+            "brand_id": "1"
+        },
+        {
+            "model_name": "Camry",
+            "brand_id": "1"
+        },
+        {
+            "model_name": "Rav4",
+            "brand_id": "1"
+        },
+        {
+            "model_name": "Highlander",
+            "brand_id": "1"
+        },
+        {
+            "model_name": "Prius",
+            "brand_id": "1"
+        },
+        {
+            "model_name": "Civic",
+            "brand_id": "2"
+        },
+        {
+            "model_name": "Accord",
+            "brand_id": "2"
+        },
+        {
+            "model_name": "CR-V",
+            "brand_id": "2"
+        },
+        {
+            "model_name": "Pilot",
+            "brand_id": "2"
+        },
+        {
+            "model_name": "Odyssey",
+            "brand_id": "2"
+        },
+        {
+            "model_name": "Focus",
+            "brand_id": "3"
+        },
+        {
+            "model_name": "Fiesta",
+            "brand_id": "3"
+        },
+        {
+            "model_name": "Mustang",
+            "brand_id": "3"
+        },
+        {
+            "model_name": "Escape",
+            "brand_id": "3"
+        },
+        {
+            "model_name": "Explorer",
+            "brand_id": "3"
+        },
+        {
+            "model_name": "3 Series",
+            "brand_id": "4"
+        },
+        {
+            "model_name": "5 Series",
+            "brand_id": "4"
+        },
+        {
+            "model_name": "X3",
+            "brand_id": "4"
+        },
+        {
+            "model_name": "X5",
+            "brand_id": "4"
+        },
+        {
+            "model_name": "7 Series",
+            "brand_id": "4"
+        },
+        {
+            "model_name": "C-Class",
+            "brand_id": "5"
+        },
+        {
+            "model_name": "E-Class",
+            "brand_id": "5"
+        },
+        {
+            "model_name": "GLC",
+            "brand_id": "5"
+        },
+        {
+            "model_name": "GLE",
+            "brand_id": "5"
+        },
+        {
+            "model_name": "S-Class",
+            "brand_id": "5"
+        },
+        {
+            "model_name": "A4",
+            "brand_id": "6"
+        },
+        {
+            "model_name": "A6",
+            "brand_id": "6"
+        },
+        {
+            "model_name": "Q5",
+            "brand_id": "6"
+        },
+        {
+            "model_name": "Q7",
+            "brand_id": "6"
+        },
+        {
+            "model_name": "TT",
+            "brand_id": "6"
+        },
+        {
+            "model_name": "Altima",
+            "brand_id": "7"
+        },
+        {
+            "model_name": "Maxima",
+            "brand_id": "7"
+        },
+        {
+            "model_name": "Sentra",
+            "brand_id": "7"
+        },
+        {
+            "model_name": "Rogue",
+            "brand_id": "7"
+        },
+        {
+            "model_name": "Pathfinder",
+            "brand_id": "7"
+        },
+        {
+            "model_name": "Cruze",
+            "brand_id": "8"
+        },
+        {
+            "model_name": "Malibu",
+            "brand_id": "8"
+        },
+        {
+            "model_name": "Trax",
+            "brand_id": "8"
+        },
+        {
+            "model_name": "Equinox",
+            "brand_id": "8"
+        },
+        {
+            "model_name": "Tahoe",
+            "brand_id": "8"
+        },
+        {
+            "model_name": "Elantra",
+            "brand_id": "9"
+        },
+        {
+            "model_name": "Tucson",
+            "brand_id": "9"
+        },
+        {
+            "model_name": "Sonata",
+            "brand_id": "9"
+        },
+        {
+            "model_name": "Kona",
+            "brand_id": "9"
+        },
+        {
+            "model_name": "Santa Fe",
+            "brand_id": "9"
+        },
+        {
+            "model_name": "Sorento",
+            "brand_id": "10"
+        },
+        {
+            "model_name": "Sportage",
+            "brand_id": "10"
+        },
+        {
+            "model_name": "Forte",
+            "brand_id": "10"
+        },
+        {
+            "model_name": "Stinger",
+            "brand_id": "10"
+        },
+        {
+            "model_name": "Telluride",
+            "brand_id": "10"
+        }
+    ],
+    "prices": [
+        {
+            "price": "800000"
+        },
+        {
+            "price": "1000000"
+        },
+        {
+            "price": "1300000"
+        },
+        {
+            "price": "1500000"
+        }
+    ],
+    "return_equipment_details": [],
+    "return_receipts": [],
+    "return_vehicle_condition_details": [],
+    "reviews": [],
+    "seats": [
+        {
+            "seat_amount": "2"
+        },
+        {
+            "seat_amount": "3"
+        },
+        {
+            "seat_amount": "4"
+        },
+        {
+            "seat_amount": "5"
+        },
+        {
+            "seat_amount": "7"
+        },
+        {
+            "seat_amount": "8"
+        }
+    ],
+    "statuses": [
+        {
+            "status_name": "Chưa xác nhận"
+        },
+        {
+            "status_name": "Đã xác nhận"
+        },
+        {
+            "status_name": "Đã hủy"
+        },
+        {
+            "status_name": "Đã hoàn thành"
+        }
+    ],
+    "users": [
+        {
+            "email": "nguyenthanhchuongww3@gmail.com",
+            "password": "123",
+            "full_name": "Nguyễn Thanh Chương",
+            "address": "Tp Hồ Chí Minh",
+            "phone": "1111111111",
+            "CCCD": "1111111111"
+        },
+        {
+            "email": "user1@gmail.com",
+            "password": "123",
+            "full_name": "User 1",
+            "address": "Tp Hồ Chí Minh",
+            "phone": "2222222222",
+            "CCCD": "2222222222"
+        }
+    ],
+    "vehicle_conditions": [
+        {
+            "vehicle_condition_name": "Bên ngoài sạch sẽ, không trầy"
+        },
+        {
+            "vehicle_condition_name": "Bốn bánh xe mới"
+        },
+        {
+            "vehicle_condition_name": "Bên trong xe sạch sẽ"
+        },
+        {
+            "vehicle_condition_name": "Khoang động cơ sạch sẽ"
+        }
     ]
 }
