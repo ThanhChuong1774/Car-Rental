@@ -12,5 +12,6 @@ router.get('/get-cars', controllers.getCars);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-car', controllers.createNewCar);
+router.post('/update-car', controllers.updateCar);
 
 module.exports = router;

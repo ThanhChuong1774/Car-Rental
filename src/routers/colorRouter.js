@@ -12,6 +12,7 @@ router.get('/get-colors', controllers.getColors);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-color', controllers.createNewColor);
+router.post('/update-color', controllers.updateColor);
 
 
 module.exports = router;

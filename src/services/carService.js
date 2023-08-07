@@ -20,7 +20,7 @@ export const getCars = ({ page, limit, order, name, ...query }) => new Promise(a
         resolve({
             err: response ? 0 : 1,
             mes: response ? 'Got' : 'Can not found cars',
-            brandData: response
+            carData: response
         })
     } catch (error) {
         console.log(error)
@@ -40,6 +40,21 @@ export const createNewCar = (body) => new Promise(async (resolve, reject) => {
         })
     } catch (error) {
         console.log(error)
+        reject(error);
+    }
+})
+
+export const updateCar = ({ id, ...body }) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await db.cars.update(body, {
+            where: { id }
+        })
+        resolve({
+            err: response[0] > 0 ? 0 : 1,
+            mes: response[0] > 0 ? `${response[0]} Updated` : 'Can not update car',
+        })
+    } catch (error) {
+        // console.log(error)
         reject(error);
     }
 })

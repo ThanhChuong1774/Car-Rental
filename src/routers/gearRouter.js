@@ -12,5 +12,7 @@ router.get('/get-gears', controllers.getGears);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-gear', controllers.createNewGear);
+router.post('/update-gear', controllers.updateGear);
+
 
 module.exports = router;

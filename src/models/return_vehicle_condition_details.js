@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-            return_vehicle_condition_details.belongsTo(models.vehicle_conditions, { foreignKey: 'vehicle_condition_id', targetKey: 'id' });
+            return_vehicle_condition_details.belongsTo(models.vehicle_conditions, { foreignKey: 'vehicle_condition_id', targetKey: 'id', as: 'vehicleData' });
         }
     }
     return_vehicle_condition_details.init({
         vehicle_condition_id: DataTypes.INTEGER,
-        vehicle_condition_status: DataTypes.INTEGER,
+        vehicle_condition: DataTypes.BOOLEAN,
     }, {
         sequelize,
         modelName: 'return_vehicle_condition_details',

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
     delivery_vehicle_condition_details.init({
         vehicle_condition_id: DataTypes.INTEGER,
-        vehicle_condition: DataTypes.INTEGER,
+        vehicle_condition: DataTypes.BOOLEAN,
     }, {
         sequelize,
         modelName: 'delivery_vehicle_condition_details',

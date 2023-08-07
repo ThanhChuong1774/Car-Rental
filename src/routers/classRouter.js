@@ -12,5 +12,6 @@ router.get('/get-classes', controllers.getClasses);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-class', controllers.createNewClass);
+router.post('/update-class', controllers.updateClass);
 
 module.exports = router;

@@ -12,5 +12,7 @@ router.get('/get-brands', controllers.getBrands);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-brand', controllers.createNewBrand);
+router.post('/update-brand', controllers.updateBrand);
+
 
 module.exports = router;

@@ -1,5 +1,5 @@
 import * as services from '../services'
-import { fuel_name } from '../helpers/joi_schema'
+import { id, fuel_name } from '../helpers/joi_schema'
 import joi from 'joi';
 import { internalServerError, badRequest } from '../middlewares/handle_error';
 
@@ -21,6 +21,17 @@ export const createNewFuel = async (req, res) => {
         if (error) { return badRequest(error.details[0].message, res) }
 
         const response = await services.createNewFuel(req.body);
+        return res.status(200).json(response);
+    } catch (error) {
+        return internalServerError(res);
+    }
+}
+
+export const updateFuel = async (req, res) => {
+    try {
+        const { error } = joi.object({ id }).validate({ id: req.body.id });
+        if (error) { return badRequest(error.details[0].message, res) }
+        const response = await services.updateFuel(req.body);
         return res.status(200).json(response);
     } catch (error) {
         return internalServerError(res);

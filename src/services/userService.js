@@ -22,3 +22,18 @@ export const getOne = (user_id) => new Promise(async (resolve, reject) => {
         reject(error);
     }
 })
+
+export const updateUser = ({ id, ...body }) => new Promise(async (resolve, reject) => {
+    try {
+        const response = await db.users.update(body, {
+            where: { id }
+        })
+        resolve({
+            err: response[0] > 0 ? 0 : 1,
+            mes: response[0] > 0 ? `${response[0]} Updated` : 'Can not update user',
+        })
+    } catch (error) {
+        // console.log(error)
+        reject(error);
+    }
+})

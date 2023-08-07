@@ -12,5 +12,7 @@ router.get('/get-seats', controllers.getSeats);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-seat', controllers.createNewSeat);
+router.post('/update-seat', controllers.updateSeat);
+
 
 module.exports = router;

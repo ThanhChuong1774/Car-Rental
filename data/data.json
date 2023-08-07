@@ -110,9 +110,19 @@
             "color_name": "Blue"
         }
     ],
-    "delivery_euipment_details": [],
+    "delivery_equipment_details": [
+        {
+            "equipment_id": "1",
+            "is_equipped": "0"
+        }
+    ],
     "delivery_receipts": [],
-    "delivery_vehicle_condition_details": [],
+    "delivery_vehicle_condition_details": [
+        {
+            "vehicle_condition_id": "1",
+            "vehicle_condition": "1"
+        }
+    ],
     "equipments": [
         {
             "equipment_name": "Bộ dụng cụ thay lốp: con đội, tay quay, tuýp mở ốc bánh xe"
@@ -458,10 +468,34 @@
             "price": "1500000"
         }
     ],
-    "return_equipment_details": [],
+    "return_equipment_details": [
+        {
+            "equipment_id": "1",
+            "is_equipped": "0"
+        }
+    ],
     "return_receipts": [],
-    "return_vehicle_condition_details": [],
+    "return_vehicle_condition_details": [
+        {
+            "vehicle_condition_id": "1",
+            "vehicle_condition": "1"
+        }
+    ],
     "reviews": [],
+    "roles": [
+        {
+            "code": "R1",
+            "value": "Admin"
+        },
+        {
+            "code": "R2",
+            "value": "Staff"
+        },
+        {
+            "code": "R3",
+            "value": "User"
+        }
+    ],
     "seats": [
         {
             "seat_amount": "2"
@@ -503,7 +537,8 @@
             "full_name": "Nguyễn Thanh Chương",
             "address": "Tp Hồ Chí Minh",
             "phone": "1111111111",
-            "CCCD": "1111111111"
+            "CCCD": "1111111111",
+            "role_code": "R1"
         },
         {
             "email": "user1@gmail.com",
@@ -511,7 +546,8 @@
             "full_name": "User 1",
             "address": "Tp Hồ Chí Minh",
             "phone": "2222222222",
-            "CCCD": "2222222222"
+            "CCCD": "2222222222",
+            "role_code": "R3"
         }
     ],
     "vehicle_conditions": [

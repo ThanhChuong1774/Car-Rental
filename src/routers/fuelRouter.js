@@ -12,5 +12,7 @@ router.get('/get-fuels', controllers.getFuels);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-fuel', controllers.createNewFuel);
+router.post('/update-fuel', controllers.updateFuel);
+
 
 module.exports = router;

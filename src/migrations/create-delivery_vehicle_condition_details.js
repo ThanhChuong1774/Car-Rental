@@ -10,7 +10,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             vehicle_condition_id: { type: Sequelize.INTEGER },
-            vehicle_condition: { type: Sequelize.INTEGER },
+            vehicle_condition: { type: Sequelize.BOOLEAN },
             createdAt: { allowNull: false, type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
             updatedAt: { allowNull: false, type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
         });

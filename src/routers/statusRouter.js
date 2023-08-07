@@ -12,5 +12,7 @@ router.get('/get-statuses', controllers.getStatuses);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-status', controllers.createNewStatus);
+router.post('/update-status', controllers.updateStatus);
+
 
 module.exports = router;

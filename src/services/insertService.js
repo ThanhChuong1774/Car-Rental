@@ -15,6 +15,12 @@ export const insertData = () => new Promise(async (resolve, reject) => {
         for (const colorData of data.colors) {
             await db.colors.create({ color_name: colorData.color_name });
         }
+        for (const deliveryEquipmentDetailData of data.delivery_equipment_details) {
+            await db.delivery_equipment_details.create({ equipment_id: deliveryEquipmentDetailData.equipment_id, is_equipped: deliveryEquipmentDetailData.is_equipped });
+        }
+        for (const deliveryVehicleConditionDetailData of data.delivery_vehicle_condition_details) {
+            await db.delivery_vehicle_condition_details.create({ vehicle_condition_id: deliveryVehicleConditionDetailData.vehicle_condition_id, vehicle_condition: deliveryVehicleConditionDetailData.vehicle_condition });
+        }
         for (const equipmentData of data.equipments) {
             await db.equipments.create({ equipment_name: equipmentData.equipment_name });
         }
@@ -33,14 +39,28 @@ export const insertData = () => new Promise(async (resolve, reject) => {
         for (const priceData of data.prices) {
             await db.prices.create({ price: priceData.price });
         }
+
+        for (const returnEquipmentDetailData of data.return_equipment_details) {
+            await db.return_equipment_details.create({ equipment_id: returnEquipmentDetailData.equipment_id, is_equipped: returnEquipmentDetailData.is_equipped });
+        }
+        for (const returnVehicleConditionDetailData of data.return_vehicle_condition_details) {
+            await db.return_vehicle_condition_details.create({ vehicle_condition_id: returnVehicleConditionDetailData.vehicle_condition_id, vehicle_condition: returnVehicleConditionDetailData.vehicle_condition });
+        }
+
+        for (const roleData of data.roles) {
+            await db.roles.create({ code: roleData.code, value: roleData.value });
+        }
         for (const seatData of data.seats) {
             await db.seats.create({ seat_amount: seatData.seat_amount });
         }
         for (const statusData of data.statuses) {
             await db.statuses.create({ status: statusData.status });
         }
+        for (const userData of data.users) {
+            await db.users.create({ email: userData.email, password: userData.password, full_name: userData.full_name, address: userData.address, phone: userData.phone, CCCD: userData.CCCD, role_code: userData.role_code });
+        }
         for (const vehicle_conditionData of data.vehicle_conditions) {
-            await db.vehicle_conditions.create({ vehicle_condition: vehicle_conditionData.vehicle_condition });
+            await db.vehicle_conditions.create({ vehicle_condition_name: vehicle_conditionData.vehicle_condition_name });
         }
         resolve('OK')
     } catch (error) {

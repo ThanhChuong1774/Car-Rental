@@ -12,5 +12,7 @@ router.get('/get-vehicle-conditions', controllers.getVehicleConditions);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-vehicle-condition', controllers.createNewVehicleCondition);
+router.post('/update-vehicle-condition', controllers.updateVehicleCondition);
+
 
 module.exports = router;

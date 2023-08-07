@@ -12,5 +12,7 @@ router.get('/get-manufacture-years', controllers.getManufactureYears);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-manufacture-year', controllers.createNewManufactureYear);
+router.post('/update-manufacture-year', controllers.updateManufactureYear);
+
 
 module.exports = router;

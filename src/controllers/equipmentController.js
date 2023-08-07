@@ -1,5 +1,5 @@
 import * as services from '../services'
-import { equipment_name } from '../helpers/joi_schema'
+import { id, equipment_name } from '../helpers/joi_schema'
 import joi from 'joi';
 import { internalServerError, badRequest } from '../middlewares/handle_error';
 
@@ -19,6 +19,17 @@ export const createNewEquipment = async (req, res) => {
         const { error } = joi.object({ equipment_name }).validate(req.body);
         if (error) { return badRequest(error.details[0].message, res) }
         const response = await services.createNewEquipment(req.body);
+        return res.status(200).json(response);
+    } catch (error) {
+        return internalServerError(res);
+    }
+}
+
+export const updateEquipment = async (req, res) => {
+    try {
+        const { error } = joi.object({ id }).validate({ id: req.body.id });
+        if (error) { return badRequest(error.details[0].message, res) }
+        const response = await services.updateEquipment(req.body);
         return res.status(200).json(response);
     } catch (error) {
         return internalServerError(res);

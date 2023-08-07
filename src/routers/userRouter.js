@@ -13,5 +13,7 @@ let router = express.Router();
 router.use(verifyToken);
 // router.use(isAdmin);
 router.get('/', controllers.getCurrent);
+router.post('/update-user', controllers.updateUser);
+
 
 module.exports = router;

@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             cars.belongsTo(models.fuels, { foreignKey: 'fuel_id', targetKey: 'id', as: 'fuelData' });
             cars.belongsTo(models.gears, { foreignKey: 'gear_id', targetKey: 'id', as: 'gearData' });
             cars.belongsTo(models.manufacture_years, { foreignKey: 'manufacture_year_id', targetKey: 'id', as: 'manufacture_yearData' });
-            cars.belongsTo(models.modelsses, { foreignKey: 'model_id', targetKey: 'id', as: 'modeData' });
+            cars.belongsTo(models.modelsses, { foreignKey: 'model_id', targetKey: 'id', as: 'modelData' });
             cars.belongsTo(models.prices, { foreignKey: 'price_id', targetKey: 'id', as: 'priceData' });
             cars.belongsTo(models.seats, { foreignKey: 'seat_id', targetKey: 'id', as: 'seatData' });
         }

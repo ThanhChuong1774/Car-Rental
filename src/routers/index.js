@@ -16,6 +16,12 @@ import seatRouter from './seatRouter';
 import statusRouter from './statusRouter';
 import vehicleConditionRouter from './vehicle_conditionRouter';
 import carRouter from './carRouter';
+import delivery_equipment_detailRouter from './delivery_equipment_detailRouter';
+import delivery_receiptRouter from './delivery_receiptRouter'
+import delivery_vehicle_condition_detailRouter from './delivery_vehicle_condition_detailRouter';
+import return_equipment_detailRouter from './return_equipment_detailRouter';
+import return_receiptRouter from './return_receiptRouter';
+import return_vehicle_condition_detailRouter from './return_vehicle_condition_detailRouter';
 import { notFound } from '../middlewares/handle_error';
 import APIController from '../controllers/APIController'
 
@@ -54,7 +60,6 @@ const initAPIRoute = (app) => {
     app.use('/api/v1/categories', categoryRouter);
     app.use('/api/v1/classes', classRouter);
     app.use('/api/v1/colors', colorRouter);
-    app.use('/api/v1/equipments', equipmentRouter);
     app.use('/api/v1/fuels', fuelRouter);
     app.use('/api/v1/gears', gearRouter);
     app.use('/api/v1/manufacture_years', manufacture_yearRouter);
@@ -62,8 +67,19 @@ const initAPIRoute = (app) => {
     app.use('/api/v1/prices', priceRouter);
     app.use('/api/v1/seats', seatRouter);
     app.use('/api/v1/statuses', statusRouter);
-    app.use('/api/v1/vehicle_conditions', vehicleConditionRouter);
+
     app.use('/api/v1/cars', carRouter);
+
+    app.use('/api/v1/equipments', equipmentRouter);
+    app.use('/api/v1/vehicle-conditions', vehicleConditionRouter);
+
+    app.use('/api/v1/delivery-equipment-details', delivery_equipment_detailRouter);
+    app.use('/api/v1/delivery-receipts', delivery_receiptRouter);
+    app.use('/api/v1/delivery-vehicle-condition-details', delivery_vehicle_condition_detailRouter);
+
+    app.use('/api/v1/return-equipment-details', return_equipment_detailRouter);
+    app.use('/api/v1/return-receipts', return_receiptRouter);
+    app.use('/api/v1/return-vehicle-condition-details', return_vehicle_condition_detailRouter);
 
     // router.get('/', APIController.getHomePage);
     // router.get('/get-all-users', APIController.getAllUsers);

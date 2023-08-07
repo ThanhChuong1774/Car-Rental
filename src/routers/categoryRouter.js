@@ -12,5 +12,6 @@ router.get('/get-categories', controllers.getCategories);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-category', controllers.createNewCategory);
+router.post('/update-category', controllers.updateCategory);
 
 module.exports = router;

@@ -41,3 +41,19 @@ export const createNewStatus = (body) => new Promise(async (resolve, reject) => 
         reject(error);
     }
 })
+
+export const updateStatus = ({ id, ...body }) => new Promise(async (resolve, reject) => {
+    try {
+        console.log(id)
+        const response = await db.statuses.update(body, {
+            where: { id }
+        })
+        resolve({
+            err: response[0] > 0 ? 0 : 1,
+            mes: response[0] > 0 ? `${response[0]} Updated` : 'Can not update status',
+        })
+    } catch (error) {
+        // console.log(error)
+        reject(error);
+    }
+})

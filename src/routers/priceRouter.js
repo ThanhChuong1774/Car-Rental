@@ -12,5 +12,7 @@ router.get('/get-prices', controllers.getPrices);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-price', controllers.createNewPrice);
+router.post('/update-price', controllers.updatePrice);
+
 
 module.exports = router;

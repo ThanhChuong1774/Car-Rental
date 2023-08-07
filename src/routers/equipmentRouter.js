@@ -12,5 +12,6 @@ router.get('/get-equipments', controllers.getEquipments);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-equipment', controllers.createNewEquipment);
+router.post('/update-equipment', controllers.updateEquipment);
 
 module.exports = router;

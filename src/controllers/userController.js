@@ -11,3 +11,13 @@ export const getCurrent = async (req, res) => {
         return internalServerError(res);
     }
 }
+export const updateUser = async (req, res) => {
+    try {
+        const { error } = joi.object({ id }).validate({ id: req.body.id });
+        if (error) { return badRequest(error.details[0].message, res) }
+        const response = await services.updateUser(req.body);
+        return res.status(200).json(response);
+    } catch (error) {
+        return internalServerError(res);
+    }
+}

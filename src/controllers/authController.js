@@ -5,9 +5,9 @@ import joi from 'joi';
 
 export const register = async (req, res) => {
     try {
-        let { email, password, full_name, address, phone, CCCD } = req.body;
+        let { email, password, full_name, address, phone, CCCD, role_code } = req.body;
         console.log(req.body);
-        const { error } = joi.object({ email, password, full_name, address, phone, CCCD }).validate(req.body);
+        const { error } = joi.object({ email, password, full_name, address, phone, CCCD, role_code }).validate(req.body);
         console.log(error)
         if (error) { return badRequest(error.details[0]?.message, res) };
         const response = await services.register(req.body);

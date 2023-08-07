@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             return_receipts.belongsTo(models.bookings, { foreignKey: 'booking_id', targetKey: 'id' });
             return_receipts.belongsTo(models.users, { foreignKey: 'staff_id', targetKey: 'id' });
             return_receipts.belongsTo(models.return_vehicle_condition_details, { foreignKey: 'vehicle_condition_detail_id', targetKey: 'id' });
-            // return_receipts.belongsTo(models.return_equipment_details, { foreignKey: 'equipment_detail_id', targetKey: 'id' });
+            return_receipts.belongsTo(models.return_equipment_details, { foreignKey: 'equipment_detail_id', targetKey: 'id' });
         }
     }
     return_receipts.init({

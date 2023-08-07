@@ -18,7 +18,7 @@ export const getManufactureYears = ({ page, limit, order, name, ...query }) => n
         resolve({
             err: response ? 0 : 1,
             mes: response ? 'Got' : 'Can not found Manufacture Years',
-            classData: response
+            manufacture_yearData: response
         })
     } catch (error) {
         console.log(error)
@@ -38,6 +38,22 @@ export const createNewManufactureYear = (body) => new Promise(async (resolve, re
         })
     } catch (error) {
         console.log(error)
+        reject(error);
+    }
+})
+
+export const updateManufactureYear = ({ id, ...body }) => new Promise(async (resolve, reject) => {
+    try {
+        console.log(id)
+        const response = await db.manufacture_years.update(body, {
+            where: { id }
+        })
+        resolve({
+            err: response[0] > 0 ? 0 : 1,
+            mes: response[0] > 0 ? `${response[0]} Updated` : 'Can not update manufacture year',
+        })
+    } catch (error) {
+        // console.log(error)
         reject(error);
     }
 })

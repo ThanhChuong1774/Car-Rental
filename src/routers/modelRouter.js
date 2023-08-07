@@ -12,5 +12,7 @@ router.get('/get-models', controllers.getModels);
 router.use(verifyToken);
 router.use(isAdmin);
 router.post('/create-new-model', controllers.createNewModel);
+router.post('/update-model', controllers.updateModel);
+
 
 module.exports = router;
